@@ -1,0 +1,8 @@
+services:
+  portfolio-client:
+    image: ghcr.io/erkkuleo/portfolio-client:latest
+    build: !reset null
+
+  portfolio-server:
+    image: ghcr.io/erkkuleo/portfolio-server:latest
+    build: !reset null

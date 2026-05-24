@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+@layer base {
+  /* Webfont imports — must be a <link> in app.html ideally, but @import works too */
+  @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;1,400;1,500&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    /* Söhne is a paid font — fall back to Inter Tight then Helvetica.
+       Add Söhne yourself if you have a license. */
+    font-family: 'Söhne', 'Inter Tight', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background: #f4f1ea;
+    color: #15151a;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  .font-serif {
+    font-family: 'Newsreader', 'Times New Roman', Times, serif;
+  }
+
+  .font-mono {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+  }
+}
+
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+  .text-pretty  { text-wrap: pretty;  }
+}
+
+/* Selection: pastel blue */
+::selection {
+  background-color: rgb(85 119 191 / 0.25);
+  color: #15151a;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: #efeae0; }
+::-webkit-scrollbar-thumb { background: #c8c2b3; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #a39d8e; }
