@@ -2,10 +2,8 @@ services:
   portfolio-client:
     build: client
     restart: unless-stopped
-    volumes:
-      - ./client/src:/app/src
     ports:
-      - 5173:5173
+      - 3000:3000
     depends_on:
       - portfolio-server
 
