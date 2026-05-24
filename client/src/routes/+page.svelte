@@ -56,7 +56,7 @@
   <!-- Hero -->
   <section class="hero">
     <div class="hero-text">
-      <div class="eyebrow">Helsinki · since 2003</div>
+      <div class="eyebrow">Helsinki · since 2004</div>
 
       <h1 class="title">
         Code, circuits,<br />
@@ -78,11 +78,8 @@
 
     <aside class="portrait-col">
       <div class="portrait">
+        <img src="/me.jpg" alt="Erkka Kiukkonen" class="portrait-img" />
         <div class="portrait-tint" style:--blue={blue}></div>
-        <div class="portrait-label">
-          [ portrait ]
-          <div class="portrait-sub">/static/me.jpg</div>
-        </div>
       </div>
       <dl class="meta">
         <dt>Location</dt>  <dd>Helsinki, FI</dd>
@@ -312,14 +309,11 @@
     position: absolute; inset: 0;
     background: radial-gradient(circle at 70% 25%, color-mix(in srgb, var(--blue) 14%, transparent), transparent 60%);
   }
-  .portrait-label {
+  .portrait-img {
     position: absolute; inset: 0;
-    display: flex; flex-direction: column;
-    align-items: center; justify-content: center;
-    font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
-    opacity: 0.5;
+    width: 100%; height: 100%;
+    object-fit: cover;
   }
-  .portrait-sub { margin-top: 0.5rem; opacity: 0.7; }
 
   .meta {
     margin: 1.25rem 0 0;
