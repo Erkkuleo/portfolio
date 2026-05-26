@@ -9,7 +9,7 @@
   <div class="brand">
     <a href="/" class="brand-name">Erkka Kiukkonen</a>
     <span class="dot">·</span>
-    <span class="brand-role">B.Sc. Computer Science, Aalto</span>
+    <span class="brand-role">B.Sc. Computer Science, Aalto-University</span>
   </div>
   <nav class="nav">
     {#each nav as l}
@@ -23,12 +23,17 @@
 
 <style>
   .topbar {
-    padding: 2.5rem 3.5rem 1.5rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 1.25rem 3.5rem;
     border-bottom: 1px solid;
     display: flex;
     align-items: baseline;
     justify-content: space-between;
     gap: 2rem;
+    background: #f4f1ea;
+    backdrop-filter: blur(8px);
   }
   .brand { display: flex; align-items: baseline; gap: 1rem; }
   .brand-name {
