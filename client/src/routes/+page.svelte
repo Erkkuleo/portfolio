@@ -1,18 +1,19 @@
 <script>
+  import Topbar from '$lib/Topbar.svelte';
   let hov = $state(null);
 
   const projects = [
     { n: "01", year: "2026", title: "Neural Canvas",     where: "Solo / studio", tag: "Interactive", desc: "AI-assisted generative art studio with collaborative paper-like brushes.", href: "/projects/neural-canvas" },
     { n: "02", year: "2025", title: "Quantum Dashboard", where: "Aalto · COS",   tag: "Systems",     desc: "Live monitoring surface for distributed services. Charts as sentences.",  href: "/projects/quantum-dashboard" },
-    { n: "03", year: "2025", title: "Echo Protocol",     where: "Solo",          tag: "Identity",    desc: "Brand and product surface for a decentralised messaging network.",         href: "/projects/echo-protocol" },
+    { n: "08", year: "2025", title: "Regenie-nonlinear",     where: "Solo",          tag: "Research",    desc: "Enable research into circadian rythms",         href: "/projects/regenie-nonlinear" },
     { n: "04", year: "2024", title: "Solder & Sketch",   where: "Solo",          tag: "Hardware",    desc: "Field-notebook of homemade circuits, PCB layouts, first-pass schematics.", href: "/projects/solder-and-sketch" },
   ];
 
   const blue  = "#5577bf";
+  const green = "#4cbb17";
   const paper = "#f4f1ea";
   const ink   = "#15151a";
 
-  const nav = ["Work", "Now", "About", "Contact"];
   const linksRows = [
     ["Email",    "erkka.kiukkonen@gmail.com",     "mailto:erkka.kiukkonen@gmail.com"],
     ["GitHub",   "github.com/erkkuleo",            "https://github.com/erkkuleo"],
@@ -27,7 +28,7 @@
 </script>
 
 <svelte:head>
-  <title>Erkka Kiukkonen — Code, circuits, quiet ideas.</title>
+  <title>Erkka Kiukkonen — Code, circuits, ideas.</title>
   <meta name="description" content="B.Sc. Computer Science at Aalto University. A slow index of projects in code and hardware." />
 </svelte:head>
 
@@ -36,22 +37,7 @@
   style:background={paper}
   style:color={ink}
 >
-  <!-- Top bar -->
-  <header class="topbar" style:border-color={ink + '22'}>
-    <div class="brand">
-      <span class="brand-name">Erkka Kiukkonen</span>
-      <span class="dot">·</span>
-      <span class="brand-role">B.Sc. Computer Science, Aalto</span>
-    </div>
-    <nav class="nav">
-      {#each nav as l}
-        <a href={"#" + l.toLowerCase()} class="navlink">
-          <span>{l}</span>
-          <span class="underline" style:background={blue}></span>
-        </a>
-      {/each}
-    </nav>
-  </header>
+  <Topbar />
 
   <!-- Hero -->
   <section class="hero">
@@ -60,7 +46,7 @@
 
       <h1 class="title">
         Code, circuits,<br />
-        and a few <span class="italic-accent" style:color={blue}>quiet ideas</span>.
+        and a few <span class="italic-accent" style:color={blue}> ideas</span>.
       </h1>
 
       <p class="lede">
@@ -84,11 +70,11 @@
       <dl class="meta">
         <dt>Location</dt>  <dd>Helsinki, FI</dd>
         <dt>Pronouns</dt>  <dd>he/him</dd>
-        <dt>Languages</dt> <dd>fi · en · sv</dd>
+        <dt>Languages</dt> <dd>fi · en · sv · fr</dd>
         <dt>Status</dt>
         <dd class="status">
-          <span class="pip" style:background={blue}></span>
-          Open to projects
+          <span class="pip" style:background={green}></span>
+          Open to network
         </dd>
       </dl>
     </aside>
@@ -210,38 +196,6 @@
     font-weight: 400;
     font-style: italic;
   }
-
-  /* ── Topbar ──────────────────────────────────────── */
-  .topbar {
-    padding: 2.5rem 3.5rem 1.5rem;
-    border-bottom: 1px solid;
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    gap: 2rem;
-  }
-  .brand { display: flex; align-items: baseline; gap: 1rem; }
-  .brand-name { font-size: 14px; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 500; }
-  .brand-role { font-size: 14px; opacity: 0.6; }
-  .dot { opacity: 0.5; }
-  .nav { display: flex; gap: 2rem; }
-  .navlink {
-    position: relative;
-    font-size: 13px;
-    text-decoration: none;
-    color: inherit;
-    opacity: 0.85;
-  }
-  .navlink:hover { opacity: 1; }
-  .navlink .underline {
-    position: absolute;
-    left: 0; right: 0; bottom: -4px;
-    height: 2px;
-    transform: scaleX(0);
-    transform-origin: left center;
-    transition: transform 320ms cubic-bezier(.7,0,.2,1);
-  }
-  .navlink:hover .underline { transform: scaleX(1); }
 
   /* ── Hero ────────────────────────────────────────── */
   .hero {
@@ -477,10 +431,8 @@
   /* ── Responsive ───────────────────────────────────── */
   @media (max-width: 960px) {
     .hero, .about, .contact { grid-template-columns: 1fr; }
-    .topbar, .hero, .work, .about, .contact, .footer { padding-left: 1.5rem; padding-right: 1.5rem; }
+    .hero, .work, .about, .contact, .footer { padding-left: 1.5rem; padding-right: 1.5rem; }
     .proj-row { grid-template-columns: 36px 1fr; row-gap: 0.25rem; }
     .proj-desc, .proj-where, .proj-year { grid-column: 2; text-align: left; }
-    .nav { gap: 1.25rem; }
-    .brand-role { display: none; }
   }
 </style>
