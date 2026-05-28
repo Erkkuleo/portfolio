@@ -3,10 +3,7 @@
   let hov = $state(null);
 
   const projects = [
-    { n: "01", year: "2026", title: "Neural Canvas",     where: "Solo / studio", tag: "Interactive", desc: "AI-assisted generative art studio with collaborative paper-like brushes.", href: "/projects/neural-canvas" },
-    { n: "02", year: "2025", title: "Quantum Dashboard", where: "Aalto · COS",   tag: "Systems",     desc: "Live monitoring surface for distributed services. Charts as sentences.",  href: "/projects/quantum-dashboard" },
     { n: "08", year: "2025", title: "Regenie-nonlinear",     where: "Solo",          tag: "Research",    desc: "Enable research into circadian rythms",         href: "/projects/regenie-nonlinear" },
-    { n: "04", year: "2024", title: "Solder & Sketch",   where: "Solo",          tag: "Hardware",    desc: "Field-notebook of homemade circuits, PCB layouts, first-pass schematics.", href: "/projects/solder-and-sketch" },
   ];
 
   const blue  = "#5577bf";
@@ -20,8 +17,8 @@
     ["LinkedIn", "in/erkka-kiukkonen",             "https://linkedin.com/in/erkka-kiukkonen"],
   ];
   const nowRows = [
-    ["Studying", "Distributed Systems"],
-    ["Building", "Custom 36-key keyboard"],
+    ["Studying", "TLA +"],
+    ["Building", "Darrabestis"],
     ["Reading",  "DDIA — Kleppmann"],
     ["Drinking", "Filter, dark roast"],
   ];
@@ -42,7 +39,7 @@
   <!-- Hero -->
   <section class="hero">
     <div class="hero-text">
-      <div class="eyebrow">Helsinki · since 2004</div>
+      <div class="eyebrow">Espoo · since 2004</div>
 
       <h1 class="title">
         Code, circuits,<br />
@@ -83,7 +80,7 @@
   <!-- Selected work -->
   <section id="work" class="work">
     <div class="section-head" style:border-color={ink + '22'}>
-      <div class="eyebrow">Selected work · 2024 – 2026</div>
+      <div class="eyebrow">Selected work · 2025 – 2026</div>
       <a href="/projects" class="muted-link">All projects ↗</a>
     </div>
 
@@ -178,7 +175,7 @@
 
   <footer class="footer" style:border-color={ink + '22'}>
     <span>© Erkka Kiukkonen · 2026</span>
-    <span>Handmade in Helsinki — SvelteKit</span>
+    <span>Handmade in Espoo — SvelteKit</span>
     <span>v.5 · last edit 22.05.26</span>
   </footer>
 </div>
