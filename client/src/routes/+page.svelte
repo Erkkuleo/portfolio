@@ -3,7 +3,7 @@
   let hov = $state(null);
 
   const projects = [
-    { n: "08", year: "2025", title: "Regenie-nonlinear",     where: "Solo",          tag: "Research",    desc: "Enable research into circadian rythms",         href: "/projects/regenie-nonlinear" },
+    { n: "08", year: "2025", title: "Regenie-nonlinear",     where: "ollilalab.org", whereHref: "https://ollilalab.org", tag: "Research",    desc: "Enable research into circadian rythms",         href: "/projects/regenie-nonlinear" },
   ];
 
   const blue  = "#5577bf";
@@ -17,10 +17,10 @@
     ["LinkedIn", "in/erkka-kiukkonen",             "https://linkedin.com/in/erkka-kiukkonen"],
   ];
   const nowRows = [
-    ["Studying", "TLA +"],
-    ["Building", "Darrabestis"],
-    ["Reading",  "DDIA — Kleppmann"],
-    ["Drinking", "Filter, dark roast"],
+    ["Studying", "HCI"],
+    ["Building", "Custom RF Amplifier"],
+    ["Reading",  "The Design of Everyday Things — Donald A. Norman"],
+    ["Drinking", "Latte"],
   ];
 </script>
 
@@ -101,7 +101,19 @@
             <span class="italic-accent proj-tag" style:color={blue}>— {p.tag.toLowerCase()}</span>
           </h3>
           <p class="proj-desc">{p.desc}</p>
-          <div class="proj-where">{p.where}</div>
+          <div class="proj-where">
+              {#if p.whereHref}
+                <span
+                  class="where-link"
+                  role="link"
+                  tabindex="0"
+                  onclick={(e) => { e.preventDefault(); e.stopPropagation(); window.open(p.whereHref, '_blank', 'noopener'); }}
+                  onkeydown={(e) => { if (e.key === 'Enter') { e.preventDefault(); e.stopPropagation(); window.open(p.whereHref, '_blank', 'noopener'); } }}
+                >{p.where}</span>
+              {:else}
+                {p.where}
+              {/if}
+            </div>
           <div class="proj-year">{p.year}</div>
           <span class="proj-marker" style:background={blue} aria-hidden="true"></span>
         </a>
@@ -323,6 +335,8 @@
   }
   .proj-desc { margin: 0; font-size: 14px; opacity: 0.75; line-height: 1.5; }
   .proj-where { font-size: 12px; opacity: 0.6; }
+  .where-link { text-decoration: underline; text-underline-offset: 2px; cursor: pointer; }
+  .where-link:hover { opacity: 1; color: #5577bf; }
   .proj-year  { font-size: 12px; opacity: 0.6; text-align: right; }
   .proj-marker {
     position: absolute;
