@@ -19,7 +19,7 @@
     <div class="meta-col">
       <div class="eyebrow">05 · 2025</div>
       <dl class="meta">
-        <dt>Role</dt>    <dd>Solo</dd>
+        <dt>Role</dt>    <dd>Researcher</dd>
         <dt>Stack</dt>   <dd>C / C++</dd>
         <dt>Status</dt>  <dd>In progress</dd>
       </dl>
@@ -46,10 +46,13 @@
       <p>REGENIE is the standard tool for whole-genome regression on biobank-scale data, but it assumes linear relationships between genotype and phenotype. Many complex traits don't fit that assumption — nonlinear effects go undetected.</p>
 
       <h2 class="h2">What I built</h2>
-      <p>A fork of REGENIE 4.1.2 with a nonlinear calculation path added to the step 2 regression. The modification preserves the original tool's memory-efficient block-ridge design while allowing non-linear kernel functions to be swapped in.</p>
+      <p>A fork of REGENIE 4.1.2 with a nonlinear calculation path added to the step 2 regression and step 1. The modification preserves the original tool's memory-efficient block-ridge design while allowing non-linear kernel functions to be swapped in.</p>
 
       <h2 class="h2">What I learned</h2>
-      <p>Large C++ codebases built for performance have very little slack — every added allocation shows up in benchmarks. Getting the nonlinear path to run at biobank scale meant understanding the existing memory layout deeply before touching anything.</p>
+      <p>Large C++ codebases built for performance have very little slack — every added allocation shows up in benchmarks.
+         Getting the nonlinear path to run at biobank scale meant understanding the existing memory layout deeply before 
+         touching anything. This was also my first tuch into research and I learned a lot from it
+      </p>
     </div>
   </section>
 

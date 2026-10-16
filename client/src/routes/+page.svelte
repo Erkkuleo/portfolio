@@ -122,13 +122,7 @@
 
     <div class="about-body">
       <p>
-        I grew up taking small electronics apart and not always putting them back together. That habit became Computer Science at <em class="serif">Aalto University</em>, where I'm finishing my bachelor's.
-      </p>
-      <p>
-        Day to day I write a lot of TypeScript and a little Rust, draw schematics in KiCad, and try to keep my code as quiet as my soldering iron is loud.
-      </p>
-      <p>
-        Outside the screen I cycle, read more than I finish, and brew filter coffee with more equipment than is reasonable.
+        I like to work with projects that need planning and coding. On my free time I like to cycle and run. 
       </p>
     </div>
 
@@ -153,7 +147,7 @@
         Drop a <span class="italic-accent" style:color={blue}>line</span>.
       </h2>
       <p class="contact-sub">
-        Email is the most reliable. I read everything; I reply to most.
+        Email is the most reliable.
       </p>
     </div>
 
